@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilot — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f12;
+      --surface: #13161b;
+      --border: #1e2228;
+      --accent: #4f8ef7;
+      --accent-dim: rgba(79,142,247,0.12);
+      --text: #e8eaf0;
+      --muted: #7a8097;
+      --tag-bg: rgba(79,142,247,0.1);
+      --tag-border: rgba(79,142,247,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Subtle grid bg */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Header */
+    header {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 100px;
+      padding: 6px 14px 6px 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+
+    .app-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .meta span::before {
+      content: '— ';
+      opacity: 0.4;
+    }
+
+    /* TOC */
+    nav.toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    nav.toc h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    nav.toc ol {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+      counter-reset: toc;
+    }
+
+    nav.toc li { counter-increment: toc; }
+
+    nav.toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    nav.toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      opacity: 0.7;
+      min-width: 22px;
+    }
+
+    nav.toc a:hover { color: var(--text); }
+
+    /* Sections */
+    section {
+      margin-bottom: 52px;
+      padding-top: 8px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 6px;
+      padding: 3px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(22px, 3.5vw, 28px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    p {
+      color: #b0b4c4;
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Data list */
+    .data-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14.5px;
+      color: #b0b4c4;
+      font-weight: 300;
+    }
+
+    .data-list li::before {
+      content: '↳';
+      color: var(--accent);
+      font-size: 15px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .data-list li strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Callout box */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid var(--tag-border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+      color: #a8c4f5;
+      font-weight: 300;
+      display: flex;
+      gap: 12px;
+    }
+
+    .callout-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .callout strong { color: #c8d8f8; font-weight: 500; }
+
+    /* Provider chips */
+    .providers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .provider-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .provider-chip .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Highlight strip */
+    .highlight-strip {
+      border-left: 3px solid var(--accent);
+      padding: 12px 18px;
+      margin: 20px 0;
+      background: var(--surface);
+      border-radius: 0 10px 10px 0;
+      font-size: 14.5px;
+      color: #b0b4c4;
+      font-weight: 300;
+    }
+
+    .highlight-strip strong { color: var(--text); font-weight: 500; }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav.toc { padding: 20px; }
+      .meta { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="app-badge">
+      <span class="app-badge-dot"></span>
+      Pilot App
+    </div>
+    <h1>Privacy <em>&amp; Policy</em></h1>
+    <div class="meta">
+      <span>Francesco Lombardi</span>
+      <span>In vigore dal 29 maggio 2026</span>
+      <span>Versione 2.0</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <h2>Indice</h2>
+    <ol>
+      <li><a href="#raccolta">Raccolta e utilizzo delle informazioni</a></li>
+      <li><a href="#terze-parti">Accesso di terze parti e infrastruttura</a></li>
+      <li><a href="#ai">Intelligenza Artificiale</a></li>
+      <li><a href="#pagamenti">Pagamenti e Abbonamenti</a></li>
+      <li><a href="#cookie">Cookie e tecnologie di tracciamento</a></li>
+      <li><a href="#trasferimenti">Trasferimenti internazionali di dati</a></li>
+      <li><a href="#conservazione">Conservazione dei dati</a></li>
+      <li><a href="#diritti">I tuoi diritti e cancellazione account</a></li>
+      <li><a href="#california">Diritti California (CCPA/CPRA)</a></li>
+      <li><a href="#bambini">Minori</a></li>
+      <li><a href="#sicurezza">Sicurezza</a></li>
+      <li><a href="#modifiche">Modifiche alla Policy</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="raccolta">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <h2>Raccolta e utilizzo delle informazioni</h2>
+    </div>
+    <p>
+      Questa privacy policy si applica all'app Pilot per dispositivi mobili e a tutti i servizi correlati gestiti da Francesco Lombardi (collettivamente, l'"Applicazione"). Francesco Lombardi è indicato come il "Fornitore del Servizio".
+    </p>
+    <p>
+      L'Applicazione raccoglie dati quando la scarichi e la utilizzi. Le categorie di informazioni raccolte includono:
+    </p>
+    <ul class="data-list">
+      <li><strong>Dati di identità e autenticazione</strong> — Indirizzo email e nome dell'utente, ottenuti tramite Apple Sign In (Apple Inc.) o Firebase Authentication (Google LLC).</li>
+      <li><strong>Dati professionali</strong> — La professione attuale dell'utente e l'obiettivo di carriera desiderato, inseriti volontariamente durante la configurazione del profilo.</li>
+      <li><strong>Progressi nelle roadmap</strong> — I dati di completamento delle roadmap di carriera generate dall'app, necessari per personalizzare i percorsi e sincronizzarli tra i dispositivi.</li>
+      <li><strong>Dati tecnici</strong> — Indirizzo IP del dispositivo, sistema operativo, pagine visitate all'interno dell'Applicazione, data/ora e tempo di utilizzo.</li>
+    </ul>
+    <div class="callout">
+      <span class="callout-icon">ℹ️</span>
+      <span>I dati professionali (professione e obiettivo di carriera) sono <strong>necessari al funzionamento del servizio</strong>: vengono utilizzati dall'AI per generare roadmap di carriera personalizzate. Senza di essi, alcune funzionalità core non sono disponibili.</span>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="terze-parti">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <h2>Accesso di terze parti e infrastruttura</h2>
+    </div>
+    <p>
+      L'Applicazione utilizza fornitori terzi per la gestione dell'infrastruttura di backend e dell'autenticazione. I dati personali dell'utente — inclusi i percorsi di carriera salvati e i progressi delle roadmap — vengono sincronizzati sul cloud e associati all'account dell'utente, al fine di garantire la disponibilità su più dispositivi.
+    </p>
+    <p>I principali fornitori di infrastruttura sono:</p>
+    <div class="providers">
+      <span class="provider-chip"><span class="dot"></span>Firebase (Google LLC) — Backend e autenticazione</span>
+      <span class="provider-chip"><span class="dot"></span>Sign in with Apple (Apple Inc.) — Autenticazione</span>
+    </div>
+    <p>
+      Le roadmap e i dati di carriera dell'utente vengono salvati sui server protetti di questi fornitori per permettere la sincronizzazione multi-dispositivo. Questi fornitori trattano i dati esclusivamente per le finalità indicate e non li utilizzano per proprie finalità commerciali indipendenti.
+    </p>
+    <div class="highlight-strip">
+      <strong>Nota:</strong> I dati non vengono venduti a terzi né utilizzati per finalità pubblicitarie.
+    </div>
+    <p>
+      Il Fornitore del Servizio può condividere le informazioni dell'utente nelle seguenti circostanze: per adempiere a obblighi legali (es. in risposta a un'ingiunzione del tribunale); per tutelare i propri diritti o la sicurezza degli utenti; con fornitori di servizi di fiducia che operano per suo conto, vincolati contrattualmente a rispettare questa policy.
+    </p>
+  </section>
+
+  <!-- 3 -->
+  <section id="ai">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <h2>Intelligenza Artificiale</h2>
+    </div>
+    <p>
+      L'Applicazione utilizza tecnologie di Intelligenza Artificiale per generare roadmap di carriera personalizzate. Per farlo, i dati inseriti dall'utente — in particolare la <strong>professione attuale</strong> e l'<strong>obiettivo di carriera desiderato</strong> — vengono trasmessi a servizi AI di terze parti tramite API sicure.
+    </p>
+    <p>I fornitori AI attualmente integrati includono:</p>
+    <div class="providers">
+      <span class="provider-chip"><span class="dot"></span>Mistral AI</span>
+      <span class="provider-chip"><span class="dot"></span>Tavily</span>
+    </div>
+    <div class="callout">
+      <span class="callout-icon">🔒</span>
+      <span><strong>Importante:</strong> I fornitori AI utilizzati dall'app sono acceduti tramite API commerciali a pagamento. In base ai termini contrattuali applicabili, <strong>questi fornitori non utilizzano i dati degli utenti per addestrare o migliorare i propri modelli AI</strong>. I tuoi dati vengono elaborati esclusivamente per rispondere alla richiesta specifica e non vengono conservati dai fornitori AI oltre il tempo necessario all'elaborazione.</span>
+    </div>
+    <p>
+      Se hai domande sul trattamento dei dati da parte dei fornitori AI, puoi consultare le rispettive privacy policy o contattarci all'indirizzo indicato nella sezione Contatti.
+    </p>
+  </section>
+
+  <!-- 4 -->
+  <section id="pagamenti">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <h2>Pagamenti e Abbonamenti</h2>
+    </div>
+    <p>
+      L'Applicazione offre acquisti in-app e abbonamenti premium. Tutte le transazioni sono <strong>gestite direttamente da Apple tramite StoreKit</strong> (il framework nativo di Apple per gli acquisti in-app su iOS e macOS).
+    </p>
+    <div class="highlight-strip">
+      <strong>Nessun dato finanziario trattato da noi:</strong> Il Fornitore del Servizio non raccoglie, non elabora e non conserva alcun dato finanziario dell'utente, inclusi dati della carta di credito, del conto bancario o qualsiasi altra informazione di pagamento. Tutte le operazioni economiche avvengono esclusivamente attraverso l'infrastruttura sicura di Apple.
+    </div>
+    <p>
+      Per informazioni sulla gestione degli abbonamenti, sulla cancellazione o sui rimborsi, fai riferimento alle istruzioni ufficiali di Apple o alle impostazioni del tuo ID Apple. Il Fornitore del Servizio non ha accesso né visibilità sui dati di pagamento.
+    </p>
+  </section>
+
+  <!-- 5 -->
+  <section id="cookie">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <h2>Cookie e tecnologie di tracciamento</h2>
+    </div>
+    <p>
+      L'Applicazione o i suoi SDK di terze parti possono utilizzare cookie, SDK, pixel e tecnologie simili per supportare funzionalità, analisi o erogazione del servizio. Laddove richiesto dalla legge applicabile, il Fornitore del Servizio otterrà il consenso prima di utilizzare tecnologie di tracciamento non essenziali.
+    </p>
+  </section>
+
+  <!-- 6 -->
+  <section id="trasferimenti">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <h2>Trasferimenti internazionali di dati</h2>
+    </div>
+    <p>
+      Il Fornitore del Servizio o i suoi fornitori terzi possono trasferire dati personali in paesi al di fuori dell'Unione Europea o del tuo paese di residenza. Laddove la legge applicabile richieda garanzie per i trasferimenti internazionali, il Fornitore utilizzerà meccanismi adeguati, tra cui:
+    </p>
+    <ul class="data-list">
+      <li>Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea</li>
+      <li>Decisioni di adeguatezza o altri meccanismi di trasferimento riconosciuti dalla legge</li>
+      <li>Il tuo consenso, ove richiesto e legalmente ammesso</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section id="conservazione">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <h2>Conservazione dei dati</h2>
+    </div>
+    <ul class="data-list">
+      <li><strong>Dati forniti dall'utente</strong> — Conservati per tutta la durata dell'utilizzo dell'Applicazione e per i 12 mesi successivi, salvo obblighi legali di conservazione più lunghi.</li>
+      <li><strong>Dati raccolti automaticamente</strong> — Conservati per un massimo di 24 mesi dalla raccolta, salvo necessità di compliance legale.</li>
+      <li><strong>Dati aggregati e anonimizzati</strong> — Conservati indefinitamente, in quanto non consentono l'identificazione dell'utente.</li>
+      <li><strong>Dati richiesti per legge</strong> — Conservati per il tempo imposto dalla normativa applicabile.</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section id="diritti">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <h2>I tuoi diritti e cancellazione account</h2>
+    </div>
+    <p>
+      Puoi in qualsiasi momento richiedere l'accesso, la rettifica o la cancellazione dei tuoi dati personali. Puoi anche revocare il consenso al trattamento, laddove il trattamento si basi sul consenso.
+    </p>
+    <div class="callout">
+      <span class="callout-icon">🗑️</span>
+      <span>
+        <strong>Eliminazione account:</strong> Puoi richiedere l'eliminazione permanente del tuo account e di tutti i dati associati <strong>direttamente all'interno dell'App</strong>, tramite l'apposito pulsante nelle Impostazioni. In alternativa, puoi contattarci via email all'indirizzo <a href="mailto:flombardi824@gmail.com" style="color: var(--accent);">flombardi824@gmail.com</a>. Si noti che alcuni dati potrebbero essere necessari per il funzionamento del servizio; la cancellazione avverrà nel rispetto degli obblighi legali di conservazione.
+      </span>
+    </div>
+    <p>
+      Puoi anche interrompere la raccolta di dati dal tuo dispositivo disinstallando l'Applicazione. La disinstallazione blocca la raccolta futura, ma non elimina automaticamente i dati già trasmessi. Per richiedere la cancellazione completa, segui le istruzioni sopra indicate.
+    </p>
+  </section>
+
+  <!-- 9 -->
+  <section id="california">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <h2>Diritti California (CCPA/CPRA)</h2>
+    </div>
+    <p>
+      Se sei residente in California, hai il diritto di sapere quali informazioni personali vengono raccolte, il diritto di richiederne la cancellazione, il diritto di opporti alla vendita o alla condivisione delle informazioni personali, e il diritto a non subire discriminazioni per l'esercizio di tali diritti.
+    </p>
+    <p>
+      Per esercitare i tuoi diritti CCPA/CPRA, contatta il Fornitore del Servizio all'indirizzo <a href="mailto:flombardi824@gmail.com" style="color: var(--accent);">flombardi824@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section id="bambini">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <h2>Minori</h2>
+    </div>
+    <p>
+      L'Applicazione non è destinata a minori di 16 anni, o a un'età superiore se richiesta dalla legge applicabile. Il Fornitore del Servizio non raccoglie consapevolmente dati personali da minori. Se hai motivo di ritenere che un minore abbia fornito informazioni personali, ti preghiamo di contattarci a <a href="mailto:flombardi824@gmail.com" style="color: var(--accent);">flombardi824@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- 11 -->
+  <section id="sicurezza">
+    <div class="section-label">
+      <span class="section-num">11</span>
+      <h2>Sicurezza</h2>
+    </div>
+    <p>
+      Il Fornitore del Servizio adotta misure fisiche, elettroniche e procedurali per proteggere le informazioni trattate. In caso di violazione dei dati personali, il Fornitore del Servizio provvederà a notificarti in conformità con i requisiti legali applicabili.
+    </p>
+  </section>
+
+  <!-- 12 -->
+  <section id="modifiche">
+    <div class="section-label">
+      <span class="section-num">12</span>
+      <h2>Modifiche alla Privacy Policy</h2>
+    </div>
+    <p>
+      Il Fornitore del Servizio può aggiornare questa Privacy Policy periodicamente. Le modifiche sostanziali saranno comunicate tramite pubblicazione della policy aggiornata con la data di entrata in vigore. Le versioni precedenti sono disponibili su richiesta scrivendo a <a href="mailto:flombardi824@gmail.com" style="color: var(--accent);">flombardi824@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- 13 -->
+  <section id="contatti">
+    <div class="section-label">
+      <span class="section-num">13</span>
+      <h2>Contatti</h2>
+    </div>
+    <p>
+      Per qualsiasi domanda relativa alla privacy durante l'utilizzo dell'Applicazione, o per esercitare i tuoi diritti, contatta il Fornitore del Servizio:
+    </p>
+    <div class="callout">
+      <span class="callout-icon">✉️</span>
+      <span>
+        <strong>Francesco Lombardi</strong><br/>
+        <a href="mailto:flombardi824@gmail.com" style="color: var(--accent);">flombardi824@gmail.com</a>
+      </span>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Francesco Lombardi — Pilot App</p>
+    <p>Ultimo aggiornamento: 29 maggio 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
